@@ -30,3 +30,10 @@ resource "aws_flow_log" "vpc_flow_log" {
   vpc_id         = "${var.vpc_id}"
   traffic_type   = "${var.traffic_type}"
 }
+
+# -----------------------------------------------------------
+# enable guard duty
+# -----------------------------------------------------------
+resource "aws_guardduty_detector" "guardduty" {
+  enable = true
+}
